@@ -1,4 +1,5 @@
-import telefono from "../../images/phone.jpg"
+import telefono from "../../images/phone.jpg";
+import styles from "./Encabezado.module.css"
 function Encabezado() {
     return (
       <>
