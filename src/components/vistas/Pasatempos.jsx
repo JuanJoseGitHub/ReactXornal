@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; 
 function Pasatempos()  {
     let [contador,setContador]= useState(0);
 
