@@ -1,10 +1,9 @@
 import './App.css';
 import './components/login/Login'
 import Login from './components/login/Login';
-import Encabezado from './components/encabezado/Encabezado';
 import Nova from './components/nova/Nova';
-import Contador from './components/encabezado/Contador'
 import Rexistro from './components/rexistro/Rexistro';
+import Navegador from './components/vistas/Navegador';
 
 function App() {
   const novas = [
@@ -24,11 +23,10 @@ function App() {
   return (
     <>
       <Login></Login>
-      <Encabezado></Encabezado>
-      <Contador></Contador>
       <Rexistro></Rexistro>
       <h2>Novas</h2>
       {componentesNovas}
+      <Navegador></Navegador>
     </>
   );
 }
