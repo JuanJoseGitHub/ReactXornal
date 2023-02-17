@@ -5,9 +5,8 @@ function Rexistro() {
   let [clave, setClave] = useState("");
   let [radio, setRadio] = useState("");
   let [radio2, setRadio2] = useState("");
-  let [check, setCheck] = useState("");
-  let [check2, setCheck2] = useState("");
   let [TextArea, setTextArea] = useState("");
+  let [sel, setSel] = useState([]);
 
   function manexadorDeInputNome(evento) {
     setNome(evento.target.value);
@@ -24,18 +23,29 @@ function Rexistro() {
   function manexadorDeInputRadio2(evento) {
     setRadio2(evento.target.value);
   }
-  function manexadorDeInputCheck(evento) {
-    setCheck(evento.target.value);
-  }
-  function manexadorDeInputCheck2(evento) {
-    setCheck2(evento.target.value);
-  }
   function manexadorDeInputTextArea(evento) {
     setTextArea(evento.target.value);
   }
+  function manexadorClick(evento) { 
+    let nSel
+    const cClick = evento.target
+    if (cClick.checked) {
+      nSel=[...sel]
+      nSel.push(cClick.value)
+    } else {
+      nSel=sel.filter(elemento=>elemento !== cClick.value)
+     }
+    setSel(nSel)
+  }
 
-  return (
+  return(
     <>
+      <input type={"checkbox"} value="Peras" name="frutas" onClick={manexadorClick}/>
+      <input type={"checkbox"} value="Mazás" name="frutas" onClick={manexadorClick}/>
+      <input type={"checkbox"} value="Noces" name="frutas" onClick={manexadorClick}/>
+      <input type={"checkbox"} value="Castañas" name="frutas" onClick={manexadorClick}/>
+      {sel}
+   
       <label>
         Nome:
         <input type="text" id="nome" value={nome} onInput={manexadorDeInputNome} />
@@ -63,15 +73,6 @@ function Rexistro() {
         {radio2}
       </label>
 
-      <label for="check">
-        Check:
-        <input type="checkbox" id="check" value="ch1" onInput={manexadorDeInputCheck}/>
-        {check}
-        Check2:
-        <input type="checkbox" id="check" value="ch2" onInput={manexadorDeInputCheck2}/>
-        {check2}
-      </label>
-
       { <label for="TextArea">
         TextArea:
          <textarea  id="TextArea" onInput={manexadorDeInputTextArea} ></textarea>  
@@ -79,7 +80,6 @@ function Rexistro() {
       </label>}
 
     </>
-  )
+  );
 }
-
 export default Rexistro;
