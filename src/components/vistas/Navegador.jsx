@@ -5,6 +5,7 @@ import Nacional from "./Nacional";
 import Pasatempos from "./Pasatempos";
 import Portada from "./Portada";
 import Provincial from "./Provincial";
+import Login from "../rexistro/Login";
 
 function Navegador()    {
 
@@ -27,6 +28,7 @@ function Navegador()    {
                 <li><a id="provincial" onClick={manexadorNav}>Provincial</a></li>
                 <li><a id="local" onClick={manexadorNav}>Local</a></li>
                 <li><a id="pasatempos" onClick={manexadorNav}>Pasatempos</a></li>
+                <li><a id="login" onClick={manexadorNav}>Login</a></li>
             </ol>              
         </nav>
 
@@ -37,6 +39,7 @@ function Navegador()    {
             { vista ==="provincial" && <Provincial/> }
             { vista ==="local" && <Local/> }
             { vista ==="pasatempos" && <Pasatempos/> }
+            { vista ==="login" && <Login/> }
             
         </main>
 

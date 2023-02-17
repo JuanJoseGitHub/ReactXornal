@@ -1,5 +1,6 @@
 import { useState } from "react";
-function Rexistro() {
+import styles from "./Rexistro.module.css"
+function Rexistro(props) {
   let [nome, setNome] = useState("");
   let [email, setEmail] = useState("");
   let [clave, setClave] = useState("");
@@ -39,16 +40,11 @@ function Rexistro() {
   }
 
   return(
-    <>
-      <input type={"checkbox"} value="Peras" name="frutas" onClick={manexadorClick}/>
-      <input type={"checkbox"} value="Mazás" name="frutas" onClick={manexadorClick}/>
-      <input type={"checkbox"} value="Noces" name="frutas" onClick={manexadorClick}/>
-      <input type={"checkbox"} value="Castañas" name="frutas" onClick={manexadorClick}/>
-      {sel}
-   
+    <> 
+      <h1 className={styles.nome} >Benvido ao formulario de rexistro</h1> 
       <label>
         Nome:
-        <input type="text" id="nome" value={nome} onInput={manexadorDeInputNome} />
+        <input type="text" id="nome" value={props.nome} onInput={manexadorDeInputNome} />
         {nome}
       </label>
       
@@ -78,6 +74,12 @@ function Rexistro() {
          <textarea  id="TextArea" onInput={manexadorDeInputTextArea} ></textarea>  
          {TextArea}   
       </label>}
+
+      <input type={"checkbox"} value="Peras" name="frutas" onClick={manexadorClick}/>
+      <input type={"checkbox"} value="Mazás" name="frutas" onClick={manexadorClick}/>
+      <input type={"checkbox"} value="Noces" name="frutas" onClick={manexadorClick}/>
+      <input type={"checkbox"} value="Castañas" name="frutas" onClick={manexadorClick}/>
+      {sel}
 
     </>
   );
